@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <% if (htmlWebpackPlugin.options.nodeModules) { %>
+      <!-- Add `node_modules/` to global paths so `require` works properly in development -->
+      <script>
+        window["SCHEMETYPE"] = "http";
+        require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
+      </script>
+    <% } %>
+    <!-- <script charset="UTF-8" src="https://cdn.jsdelivr.net/npm/sa-sdk-javascript@1.18.4/sensorsdata.min.js"></script> -->
+    <script src="static/libs/sensorsdata-1.18.4.min.js"></script>
+    <script charset="UTF-8">
+      var sensors = window['sensorsDataAnalytic201505'];
+      // var url = 'http://meiteng.datasink.sensorsdata.cn/sa?token=6e6d31ad9286f184';
+      // if (process.env.MODE_ENV === 'prod') url += '&project=production';
+      var url = "";
+      if ('<%= JSON.stringify(htmlWebpackPlugin.options.isProd) %>' === 'true'){
+        url =  "http://meiteng.datasink.sensorsdata.cn/sa?token=6e6d31ad9286f184&project=production"
+      } else {
+        url= "http://meiteng.datasink.sensorsdata.cn/sa?token=6e6d31ad9286f184&project=default";
+      }
+      sensors.init({
+        server_url: url,
+        heatmap:{
+          //是否开启点击图，default 表示开启，自动采集 $WebClick 事件，可以设置 'not_collect' 表示关闭。
+          clickmap:'default',
+          //是否开启触达注意力图，not_collect 表示关闭，不会自动采集 $WebStay 事件，可以设置 'default' 表示开启。
+          scroll_notice_map:'not_collect'
+        },
+        use_client_time:false,
+        send_type:'ajax'
+      });
+      sensors.registerPage({
+        client_type: "智信PC端",
+        corp_id: "",
+        corp_name: ""
+      });
+      sensors.quick('autoTrack');
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Set `__static` path to static files in production -->
+    <% if (!process.browser) { %>
+      <script>
+        if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+      </script>
+    <% } %>
+
+    <!-- webpack builds are automatically injected -->
+  </body>
+  <script src="static/libs/Libamr-2.2.5.min.js"></script>
+</html>

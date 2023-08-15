@@ -1,0 +1,69 @@
+{
+  "comments": false,
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": { "node": 10 }
+          }
+        ],
+        "stage-0"
+      ],
+      "plugins": ["istanbul"]
+    },
+    "main": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": { "node": 10 }
+          }
+        ],
+        "stage-0"
+      ]
+    },
+    "renderer": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false
+          }
+        ],
+        "stage-0"
+      ]
+    },
+    "web": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false
+          }
+        ],
+        "stage-0"
+      ]
+    }
+  },
+  "plugins": [
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ],
+    "transform-runtime",
+    ["import", {
+      "libraryName": "ant-design-vue",
+      "libraryDirectory": "es",
+      "style": "css"
+    }],
+    ["import", {
+      "libraryName": "iview",
+      "libraryDirectory": "src/components"
+    }]
+  ]
+}

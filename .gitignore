@@ -1,0 +1,17 @@
+.idea
+.DS_Store
+dist/electron/*
+dist/web/*
+build/*
+!build/icons
+!build/certificate
+coverage
+node_modules/
+npm-debug.log
+npm-debug.log.*
+yarn-debug.log*
+yarn-error.log*
+thumbs.db
+!.gitkeep
+.vscode
+electron-builder.yml

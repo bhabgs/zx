@@ -1,0 +1,33 @@
+$--default-theme-color: #4498f0; // 默认主题颜色
+$--menu-hover-bgcolor: #f5f6f7; // 菜单hover背景色
+$--aside-width: 60px; // 侧边栏宽度
+$--aside-border-right-width: $--aside-width - 60px; // 侧边蓝条宽度
+$--header-height: 48px; // 头部高度
+$--header-background: #3e7eff;
+// $--header-background: linear-gradient(
+//   90deg,
+//   rgba(61, 152, 250, 1),
+//   rgba(61, 152, 250, 1),
+//   rgba(74, 128, 246, 1),
+//   rgba(74, 128, 246, 1)
+// ); // 头部背景颜色
+
+// Chat
+$--conversation-selected-color: #ebedf0; // 会话选中颜色
+$--chat-msg-rc-border-color: #f3f3f3; // 收到消息边框颜色
+$--chat-msg-rc-bg-color: #fff; // 收到消息背景颜色
+$--chat-msg-sd-bg-color: #e2f0fe; // 发送消息背景颜色
+$--chat-msg-sd-border-color: #c0dffe; // 发送消息背景颜色
+$--chat-msg-state-color: #c2c1c1; // 消息状态颜色
+$--chat-main-bg-color: #f6f6f6; // 消息列表背景色
+
+@mixin menu-select-style {
+  background-color: #e3f0fd !important;
+  border-right: 4px solid #4498f0;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,413 @@
+@import "./reset-ui-ifram.scss";
+
+html,
+body {
+  border-radius: 6px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+*:focus {
+  outline: 0;
+}
+
+input.el-input__inner {
+  line-height: 1 !important;
+}
+
+.ivu-message {
+  /* 修改消息提示距离顶部的位置 */
+  top: 10% !important;
+  z-index: 99999 !important;
+}
+
+.iScrollVerticalScrollbar {
+  width: 8px !important;
+}
+
+.iScrollIndicator {
+  background-color: #d2d2d2 !important;
+  border-radius: 6px !important;
+  height: 100px;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.clear::after {
+  content: "";
+  display: block;
+  width: 0 !important;
+  height: 0 !important;
+  clear: both;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-none {
+  flex: 0;
+}
+
+.flex-auto {
+  flex: 1;
+}
+
+.avatar-box {
+  margin: 0 10px;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.only-line {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hint-sign {
+  .ivu-badge-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+    height: 16px;
+    min-width: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    font-size: 10px;
+    color: #fff;
+    z-index: 1;
+  }
+  .ivu-badge-count,
+  .ivu-badge-dot {
+    box-shadow: none;
+  }
+
+  .ivu-badge-dot {
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+  }
+
+  &.hot-color {
+    .ivu-badge-count,
+    .ivu-badge-dot {
+      background-color: #e94b3f;
+    }
+  }
+  &.mid-color {
+    .ivu-badge-count,
+    .ivu-badge-dot {
+      background-color: #f5ad01;
+    }
+  }
+  &.low-color {
+    .ivu-badge-count,
+    .ivu-badge-dot {
+      background-color: #3bca66;
+    }
+  }
+  &.number-badge,
+  &.scale {
+    .ivu-badge-count,
+    .ivu-badge-dot {
+      background-color: #ff1919;
+    }
+  }
+}
+
+.num-red {
+  .ivu-badge-count {
+    background-color: red !important;
+  }
+}
+
+.ivu-dropdown-item-selected {
+  color: #3e7eff !important;
+}
+
+.cursorPoint {
+  -webkit-app-region: no-drag;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 2px;
+  height: 100%;
+  cursor: e-resize;
+  background: transparent;
+}
+
+.show-view-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  > header {
+    flex-shrink: 0;
+  }
+
+  > section {
+    flex: 1;
+    overflow: hidden;
+  }
+}
+
+// file icon
+@mixin file-icon {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+}
+.ai-file {
+  background-image: url(~@/assets/image/fileicon/ai.png);
+  @include file-icon;
+}
+
+.arm-file {
+  background-image: url(~@/assets/image/fileicon/arm.png);
+  @include file-icon;
+}
+
+.css-file {
+  background-image: url(~@/assets/image/fileicon/css.png);
+  @include file-icon;
+}
+
+.doc-file {
+  background-image: url(~@/assets/image/fileicon/doc.png);
+  @include file-icon;
+}
+
+.eps-file {
+  background-image: url(~@/assets/image/fileicon/eps.png);
+  @include file-icon;
+}
+
+.gif-file {
+  background-image: url(~@/assets/image/fileicon/gif.png);
+  @include file-icon;
+}
+
+.html-file {
+  background-image: url(~@/assets/image/fileicon/html.png);
+  @include file-icon;
+}
+
+.jpg-file {
+  background-image: url(~@/assets/image/fileicon/jpg.png);
+  @include file-icon;
+}
+
+.json-file {
+  background-image: url(~@/assets/image/fileicon/json.png);
+  @include file-icon;
+}
+
+.mp3-file {
+  background-image: url(~@/assets/image/fileicon/mp3.png);
+  @include file-icon;
+}
+
+.mp4-file {
+  background-image: url(~@/assets/image/fileicon/mp4.png);
+  @include file-icon;
+}
+
+.pdf-file {
+  background-image: url(~@/assets/image/fileicon/pdf.png);
+  @include file-icon;
+}
+
+.png-file {
+  background-image: url(~@/assets/image/fileicon/png.png);
+  @include file-icon;
+}
+
+.ppt-file {
+  background-image: url(~@/assets/image/fileicon/ppt.png);
+  @include file-icon;
+}
+
+.txt-file {
+  background-image: url(~@/assets/image/fileicon/txt.png);
+  @include file-icon;
+}
+
+.unknown-file {
+  background-image: url(~@/assets/image/fileicon/未知.png);
+  @include file-icon;
+}
+
+.vid-file {
+  background-image: url(~@/assets/image/fileicon/vid.png);
+  @include file-icon;
+}
+
+.wav-file {
+  background-image: url(~@/assets/image/fileicon/wav.png);
+  @include file-icon;
+}
+
+.xls-file {
+  background-image: url(~@/assets/image/fileicon/xls.png);
+  @include file-icon;
+}
+
+.xml-file {
+  background-image: url(~@/assets/image/fileicon/xml.png);
+  @include file-icon;
+}
+
+.zip-file {
+  background-image: url(~@/assets/image/fileicon/zip.png);
+  @include file-icon;
+}
+
+.crypto-file {
+  background-image: url(~@/assets/image/fileicon/加密文件.png);
+  @include file-icon;
+}
+
+.crypto-img-file {
+  background-image: url(~@/assets/image/fileicon/加密图片.png);
+  @include file-icon;
+}
+
+.crypto-video-file {
+  background-image: url(~@/assets/image/fileicon/加密视频.png);
+  @include file-icon;
+}
+
+.select-paste-type-modal {
+  padding-bottom: 0;
+
+  .show-img-box {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .el-message-box__content {
+    border: 1px solid #e8e8e8 {
+      left: 0;
+      right: 0;
+    }
+
+    .el-message-box__btns {
+      padding: 10px 15px;
+    }
+  }
+}
+
+.mt-ant-design-modal-wrap {
+  .mt-ant-design-modal-dialog {
+    width: 600px !important;
+
+    .ant-modal-header {
+      justify-content: center;
+      background-color: #eff3f6;
+    }
+
+    .ant-modal-body {
+      padding: 0;
+    }
+
+    .ant-modal-footer {
+      text-align: center;
+    }
+  }
+}
+
+.mt-checkbox-circle {
+  .ant-checkbox-inner {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    &::after {
+      width: 7px;
+      height: 10px;
+    }
+  }
+}
+
+.el-tooltip__popper {
+  padding: 5px !important;
+  background: #1f2329 !important;
+  opacity: 0.8 !important;
+}
+
+.select-more-meaning-popover {
+  min-width: 100px !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  .meaning {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: #1f2329;
+    &:hover {
+      background: #f7f7f9;
+    }
+  }
+}
+.ant-message {
+  z-index: 9999 !important;
+}
+
+.warningDialog {
+  .el-message-box__status {
+    top: 12px;
+    color: #feac00 !important;
+  }
+  .el-message-box__btns {
+    .el-button {
+      width: 60px;
+      height: 34px;
+      &.el-button--default {
+        background-color: #fff;
+        &:hover {
+          color:#3e7eff;
+          border-color: #3e7eff;
+        }
+      }
+      &.el-button--primary {
+        background-color: #3e7eff;
+        border: none;
+        &:hover {
+          background-color: #2E6BE6;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

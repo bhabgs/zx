@@ -1,0 +1,138 @@
+*,
+article,
+aside,
+blockquote,
+body,
+button,
+dd,
+details,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+input,
+legend,
+li,
+menu,
+nav,
+ol,
+p,
+pre,
+section,
+td,
+textarea,
+th,
+ul {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+html {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.9);
+}
+
+body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  font-family: "Microsoft YaHei", "Microsoft YaHei UI", Arial, sans-serif;
+  color: #222;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.9);
+}
+
+pre {
+  white-space: pre-wrap;
+  vertical-align: baseline;
+}
+
+textarea {
+  resize: none;
+}
+
+input {
+  border: none;
+  outline: 0;
+}
+
+input:-webkit-autofill {
+  background-color: white;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+}
+
+img {
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  background-color: transparent;
+}
+
+button[disabled] {
+  cursor: default;
+  color: #999;
+}
+
+pre {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 6px;
+  background-color: transparent;
+  &:hover {
+    width: 12px;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background-color: #d6d6d6;
+  transition: all 0.35s ease-in-out;
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+::-webkit-scrollbar-track,
+scrollbar-track-color {
+  background-color: transparent;
+}
+
+:-webkit-full-screen {
+  z-index: 99999 !important;
+  box-shadow: rgba($color: #000000, $alpha: 1) 0 0 0;
+}
+.group-user-info-popper {
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+}

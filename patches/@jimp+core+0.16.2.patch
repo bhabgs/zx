@@ -1,0 +1,13 @@
+diff --git a/node_modules/@jimp/core/es/utils/image-bitmap.js b/node_modules/@jimp/core/es/utils/image-bitmap.js
+index 4beabbe..4b8507d 100644
+--- a/node_modules/@jimp/core/es/utils/image-bitmap.js
++++ b/node_modules/@jimp/core/es/utils/image-bitmap.js
+@@ -193,7 +193,7 @@ function parseBitmap(data, path, cb) {
+     var _mime = this.getMIME();
+ 
+     if (this.constructor.decoders[_mime]) {
+-      this.bitmap = this.constructor.decoders[_mime](data);
++      this.bitmap = this.constructor.decoders[_mime](data, {maxMemoryUsageInMB: 2000});
+     } else {
+       return _utils.throwError.call(this, 'Unsupported MIME type: ' + _mime, cb);
+     }

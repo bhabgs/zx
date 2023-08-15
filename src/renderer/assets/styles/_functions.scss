@@ -1,0 +1,14 @@
+$base: 100;
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@function u($values) {
+  $list: ();
+  @each $value in $values {
+    $unit: unit($value);
+    $val: parseInt($value);
+    $list: append($list, ($val / $base) + rem);
+  }
+  @return $list();
+}
